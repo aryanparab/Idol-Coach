@@ -1,0 +1,112 @@
+```python
+from difflib import SequenceMatcher
+
+def align_lyrics(reference_lyrics, user_lyrics):
+    """
+    Aligns user-sung lyrics with reference song lyrics and timestamps.
+
+    Args:
+        reference_lyrics: A list of dictionaries, where each dictionary contains
+            the word and its start and end times.
+        user_lyrics: A list of words representing the user's transcribed lyrics.
+
+    Returns:
+        A list of matched segments. Each segment contains:
+            start_time: timestamp in seconds where the match starts in the
+                reference lyrics
+            end_time: timestamp in seconds where the match ends in the reference
+                lyrics
+            song_words_snippet: list of words from the reference lyrics for that
+                segment
+            match_ratio: a float (0 to 1) representing how closely the user
+                lyrics match this segment (1 = exact match)
+    """
+
+    matched_segments = []
+    user_lyrics_len = len(user_lyrics)
+
+    for i in range(len(reference_lyrics)):
+        for j in range(i, len(reference_lyrics)):
+            song_snippet = [
+                item['word'] for item in reference_lyrics[i:j+1]
+            ]
+            song_snippet_str = ' '.join(song_snippet)
+            user_lyrics_str = ' '.join(user_lyrics)
+
+            matcher = SequenceMatcher(None, song_snippet_str, user_lyrics_str)
+            match = matcher.find_longest_match(0, len(song_snippet_str), 0, len(user_lyrics_str))
+
+            if match.size > 0:
+                # Extract the matching words from the song snippet
+                matched_song_words = song_snippet_str[match.a:match.a + match.size].split()
+                
+                # Calculate the match ratio based on the ratio of the matched part to the user lyrics length
+                match_ratio = match.size / len(user_lyrics_str)
+                
+                # Create the matched segment
+                segment = {
+                    'start_time': reference_lyrics[i]['start'],
+                    'end_time': reference_lyrics[j]['end'],
+                    'song_words_snippet': song_snippet,
+                    'match_ratio': match_ratio,
+                }
+                matched_segments.append(segment)
+
+    # Filter out overlapping segments and keep the ones with the highest match ratio
+    filtered_segments = []
+    used_indices = set()
+
+    for segment in sorted(matched_segments, key=lambda x: x['match_ratio'], reverse=True):
+        start_index = next((i for i, item in enumerate(reference_lyrics) if item['start'] == segment['start_time']), None)
+        end_index = next((i for i, item in enumerate(reference_lyrics) if item['end'] == segment['end_time']), None)
+
+        overlap = False
+        for i in range(start_index, end_index + 1):
+            if i in used_indices:
+                overlap = True
+                break
+        
+        if not overlap:
+            filtered_segments.append(segment)
+            for i in range(start_index, end_index + 1):
+                used_indices.add(i)
+
+    return filtered_segments
+```
+
+**Explanation:**
+
+1.  **Initialization:**
+    *   `matched_segments`:  An empty list to store the matched segments.
+
+2.  **Iterate Through Reference Lyrics:**
+    *   The code iterates through all possible segments of the `reference_lyrics` using nested loops. The outer loop starts at `i = 0` and the inner loop goes from `i` to the end of `reference_lyrics`.
+
+3.  **Extract Snippet:**
+    *   `song_snippet`: Extracts the words from the current segment of the `reference_lyrics`.
+
+4.  **Sequence Matching:**
+    *   `SequenceMatcher`: Uses the `SequenceMatcher` class from the `difflib` module to find the longest common sequence between the current `song_snippet` and the `user_lyrics`. This is a flexible way to handle cases where the user might have skipped words or phrases.
+    *   `match`: The `find_longest_match` method returns a `Match` object representing the longest common sequence. The `Match` object contains the starting indices in both sequences (`a` and `b`) and the length of the match (`size`).
+
+5.  **Calculate Match Ratio:**
+    *   `match_ratio`: Calculates the match ratio, providing a measure of how well the user's lyrics align with the current segment of the reference lyrics.
+
+6.  **Create Segment:**
+    *   If the `match.size` is greater than 0 (meaning there is a match), a dictionary `segment` is created containing:
+        *   `start_time`: The starting timestamp of the segment in the reference lyrics.
+        *   `end_time`: The ending timestamp of the segment in the reference lyrics.
+        *   `song_words_snippet`:  The list of words forming the segment in the reference lyrics.
+        *   `match_ratio`: The calculated match ratio.
+    *   The `segment` is appended to the `matched_segments` list.
+
+7. **Filtering Overlapping Segments:**
+    * After collecting all potential segments, the code filters out any overlapping segments.  It sorts segments by `match_ratio` to prioritize segments with better matches. A `used_indices` set keeps track of the indices that are already covered. Overlapping segments are skipped and only non-overlapping segments with the highest `match_ratio` are included in the final results.
+
+8.  **Return Matched Segments:**
+    *   The function returns the `filtered_segments` list containing the aligned segments.
+
+**How to Use:**
+
+```python
+reference_lyrics = [{'word': '1', 'start': 26.48, 'end': 26.830000000000002}, {'word': 'you', 'start': 27.0, 'end': 27.1}, {'word': 'said', 'start': 27.099999, 'end': 27.459999}, {'word': 'you', 'start': 27.46, 'end': 27.580000000000002}, {'word': 'felt', 'start': 27.58, 'end': 27.88}, {'word': 'so', 'start': 27.880000000000003, 'end': 28.140000000000004}, {'word': 'happy', 'start': 28.16, 'end': 28.830000000000002}, {'word': 'you', 'start': 28.83, 'end': 29.389999999999997}, {'word': 'could', 'start': 29.45, 'end': 29.65}, {'word': 'die', 'start': 29.73, 'end': 30.0}, {'word': 'I', 'start': 31.28, 'end': 31.400000000000002}, {'word': 'told', 'start': 34.129999, 'end': 34.409999}, {'word': 'myself', 'start': 34.41, 'end': 34.91}, {'word': 'that', 'start': 34.92, 'end': 35.11}, {'word': 'you', 'start': 35.109999, 'end': 35.269999}, {'word': 'were', 'start': 35.269999999999996, 'end': 35.61}, {'word': 'right', 'start': 35.619999, 'end': 35.929999}, {'word': 'for', 'start': 35.959998999999996, 'end': 36.299999}, {'word': 'me', 'start': 36.299999, 'end': 37.039999}, {'word': 'But', 'start': 40.479999, 'end': 40.509999}, {'word': 'felt', 'start': 40.509999, 'end': 40.549999}, {'word': 'so', 'start': 40.549999, 'end': 40.569999}, {'word': 'lonely', 'start': 40.569999, 'end': 40.679999}, {'word': 'But', 'start': 41.39, 'end': 41.54}, {'word': 'that', 'start': 41.63, 'end': 41.870000000000005}, {'word': 'was', 'start': 41.87, 'end': 42.0}, {'word': 'love', 'start': 42.22, 'end': 42.32}, {'word': '2', 'start': 42.7, 'end': 43.44}, {'word': 'Gotye', 'start': 43.78, 'end': 44.42}, {'word': 'You', 'start': 63.459998999999996, 'end': 63.519999}, {'word': 'can', 'start': 63.69, 'end': 63.879999999999995}, {'word': 'get', 'start': 64.25, 'end': 64.28}, {'word': 'addicted', 'start': 64.28, 'end': 64.78}, {'word': 'to', 'start': 64.849999, 'end': 65.19999899999999}, {'word': 'a', 'start': 72.099999, 'end': 72.10999899999999}, {'word': 'certain', 'start': 72.10999899999999, 'end': 72.15999899999998}, {'word': 'kind', 'start': 72.15999899999998, 'end': 72.19999899999999}, {'word': 'of', 'start': 72.19999899999999, 'end': 72.21999899999999}, {'word': 'sadness', 'start': 72.21999899999999, 'end': 72.27999899999999}, {'word': 'to', 'start': 72.44999899999999, 'end': 72.55999899999999}, {'word': 'the', 'start': 72.559999, 'end': 72.84999900000001}, {'word': 'end', 'start': 72.91, 'end': 73.22}, {'word': 'always', 'start': 75.23, 'end': 75.28}, {'word': 'the', 'start': 75.28, 'end': 75.3}, {'word': 'end', 'start': 75.3, 'end': 75.6}, {'word': 'So', 'start': 78.5, 'end': 78.76}, {'word': 'when', 'start': 78.76, 'end': 79.03}, {'word': 'we', 'start': 79.75, 'end': 79.91}, {'word': 'could', 'start': 79.96, 'end': 80.14999999999999}, {'word': 'not', 'start': 80.15, 'end': 80.59}, {'word': 'make', 'start': 80.69, 'end': 81.03999999999999}, {'word': 'sense', 'start': 81.03999999999999, 'end': 81.88999999999999}, {'word': 'Well', 'start': 82.48, 'end': 82.67}, {'word': 'you', 'start': 82.67, 'end': 82.87}, {'word': 'said', 'start': 82.87, 'end': 83.26}, {'word': 'that', 'start': 86.05000000000001, 'end': 86.08}, {'word': 'we', 'start': 86.08, 'end': 86.10000000000001}, {'word': 'would', 'start': 86.10000000000001, 'end': 86.13000000000001}, {'word': 'I', 'start': 86.299999, 'end': 86.469999}, {'word': 'was', 'start': 87.46000000000001, 'end': 87.61000000000001}, {'word': 'glad', 'start': 87.61, 'end': 87.91}, {'word': 'it', 'start': 88.58, 'end': 88.82}, {'word': 'was', 'start': 88.879999, 'end': 89.179999}, {'word': 'Gotye', 'start': 89.319999, 'end': 90.909999}, {'word': 'me', 'start': 95.17, 'end': 95.19}, {'word': 'off', 'start': 95.19, 'end': 95.21}, {'word': 'Make', 'start': 97.36, 'end': 97.69}, {'word': 'out', 'start': 97.69, 'end': 97.75}, {'word': 'like', 'start': 97.92, 'end': 98.15}, {'word': 'it', 'start': 98.15, 'end': 98.29}, {'word': 'never', 'start': 98.68, 'end': 98.72000000000001}, {'word': 'happened', 'start': 98.72000000000001, 'end': 98.88000000000001}, {'word': 'and', 'start': 101.12, 'end': 101.18}, {'word': 'that', 'start': 101.41000000000001, 'end': 101.58000000000001}, {'word': 'we', 'start': 101.58000000000001, 'end': 101.60000000000001}, {'word': 'were', 'start': 101.60000000000001, 'end': 101.62}, {'word': 'And', 'start': 101.78999999999999, 'end': 101.85999999999999}, {'word': 'I', 'start': 101.86, 'end': 101.87}, {'word': "don't", 'start': 101.87, 'end': 102.13000000000001}, {'word': 'even', 'start': 102.13, 'end': 102.38}, {'word': 'need', 'start': 102.389999, 'end': 103.229999}, {'word': 'your', 'start': 103.23, 'end': 103.27000000000001}, {'word': 'love', 'start': 103.86, 'end': 103.97}, {'word': 'you', 'start': 104.17, 'end': 104.25}, {'word': 'treat', 'start': 104.33, 'end': 104.64}, {'word': 'me', 'start': 104.639999, 'end': 104.689999}, {'word': 'like', 'start': 104.92, 'end': 105.11}, {'word': 'a', 'start': 105.28, 'end': 105.29}, {'word': 'stranger', 'start': 105.28999999999999, 'end': 105.86999999999999}, {'word': 'and', 'start': 105.87, 'end': 106.01}, {'word': 'that', 'start': 106.01, 'end': 106.2}, {'word': 'so', 'start': 106.73, 'end': 107.07000000000001}, {'word': 'rough', 'start': 107.119999, 'end': 107.479999}, {'word': 'No', 'start': 108.539999, 'end': 108.77999899999999}, {'word': 'you', 'start': 108.779999, 'end': 108.799999}, {'word': "didn't", 'start': 108.999999, 'end': 109.239999}, {'word': 'have', 'start': 109.239999, 'end': 109.269999}, {'word': 'to', 'start': 109.709999, 'end': 109.859999}, {'word': 'stoop', 'start': 109.879999, 'end': 110.069999}, {'word': 'friends', 'start': 112.66, 'end': 113.07}, {'word': 'collect', 'start': 113.1, 'end': 113.47999999999999}, {'word': 'your', 'start': 113.48, 'end': 113.71000000000001}, {'word': 'records', 'start': 114.12, 'end': 114.18}, {'word': 'and', 'start': 114.18, 'end': 114.21000000000001}, {'word': 'then', 'start': 114.21000000000001, 'end': 114.24000000000001}, {'word': 'change', 'start': 114.60000000000001, 'end': 115.01}, {'word': 'your', 'start': 115.01, 'end': 115.13000000000001}, {'word': 'number', 'start': 115.3, 'end': 115.53999999999999}, {'word': 'I', 'start': 115.53999999999999, 'end': 115.55}, {'word': 'guess', 'start': 116.47999999999999, 'end': 116.64999999999999}, {'word': 'that', 'start': 117.02, 'end': 117.25999999999999}, {'word': 'that', 'start': 118.03999999999999, 'end': 118.3}, {'word': 'though', 'start': 118.9, 'end': 118.92}, {'word': 'Now', 'start': 119.2, 'end': 119.47}, {'word': "you're", 'start': 119.469999, 'end': 119.579999}, {'word': 'just', 'start': 119.78999999999999, 'end': 119.91}, {'word': 'somebody', 'start': 119.92, 'end': 120.60000000000001}, {'word': 'Now', 'start': 126.63000000000001, 'end': 126.89000000000001}, {'word': "you're", 'start': 134.659999, 'end': 134.689999}, {'word': 'just', 'start': 134.69, 'end': 134.74}, {'word': 'somebody', 'start': 135.04000000000002, 'end': 135.5}, {'word': 'that', 'start': 153.249998, 'end': 153.339998}, {'word': 'I', 'start': 153.339998, 'end': 153.349998}, {'word': 'think', 'start': 154.19, 'end': 154.47000000000003}, {'word': 'of', 'start': 154.469999, 'end': 155.909999}, {'word': 'me', 'start': 156.08, 'end': 156.38000000000002}, {'word': 'over', 'start': 156.38, 'end': 156.66}, {'word': 'But', 'start': 156.66, 'end': 156.95}, {'word': 'You', 'start': 171.87, 'end': 172.06}, {'word': 'said', 'start': 175.96, 'end': 176.3}, {'word': 'that', 'start': 176.299999, 'end': 176.47999900000002}, {'word': 'you', 'start': 176.48, 'end': 176.69}, {'word': 'could', 'start': 176.73, 'end': 176.92999999999998}, {'word': 'let', 'start': 176.929999, 'end': 177.269999}, {'word': 'it', 'start': 177.27, 'end': 177.54000000000002}, {'word': 'go', 'start': 177.66, 'end': 177.81}, {'word': 'And', 'start': 178.57, 'end': 178.62}, {'word': 'I', 'start': 178.96, 'end': 178.97}, {'word': "wouldn't", 'start': 178.97, 'end': 179.23000000000002}, {'word': 'you', 'start': 179.529999, 'end': 179.699999}, {'word': 'hung', 'start': 180.109999, 'end': 180.139999}, {'word': 'up', 'start': 180.139999, 'end': 180.259999}, {'word': 'on', 'start': 180.26, 'end': 180.39999999999998}, {'word': 'somebody', 'start': 180.42000000000002, 'end': 181.11}, {'word': 'Gotye', 'start': 181.12, 'end': 181.13000000000002}, {'word': 'that', 'start': 186.74, 'end': 186.91000000000003}, {'word': 'we', 'start': 188.23000000000002, 'end': 188.34}, {'word': 'were', 'start': 188.34, 'end': 188.53}, {'word': 'you', 'start': 193.45, 'end': 193.54999999999998}, {'word': 'treat', 'start': 193.63, 'end': 193.94}, {'word': 'me', 'start': 193.94, 'end': 194.01}, {'word': 'like', 'start': 194.219999, 'end': 194.409999}, {'word': 'a', 'start': 194.62, 'end': 194.63}, {'word': 'stranger', 'start': 194.63, 'end': 195.18}, {'word': 'and', 'start': 195.179999, 'end': 195.309999}, {'word': 'that', 'start': 195.479999, 'end': 195.509999}, {'word': 'feels', 'start': 195.509999, 'end': 195.60999900000002}, {'word': 'so', 'start': 196.049999, 'end': 196.299999}, {'word': 'rough', 'start': 196.489999, 'end': 196.759999}, {'word': 'Ah', 'start': 197.60999900000002, 'end': 198.789999}, {'word': 'No', 'start': 198.789999, 'end': 199.249999}, {'word': 'you', 'start': 199.249999, 'end': 201.739999}, {'word': 'Have', 'start': 201.91, 'end': 201.94}, {'word': 'your', 'start': 201.94, 'end': 201.97}, {'word': 'friends', 'start': 201.97, 'end': 202.34}, {'word': 'collect', 'start': 202.53, 'end': 202.79}, {'word': 'your', 'start': 202.79, 'end': 202.89}, {'word': 'records', 'start': 203.04999999999998, 'end': 203.10999999999999}, {'word': 'and', 'start': 203.83, 'end': 203.86}, {'word': 'then', 'start': 203.86, 'end': 203.89000000000001}, {'word': 'change', 'start': 203.89, 'end': 204.30999999999997}, {'word': 'your', 'start': 204.31, 'end': 204.37}, {'word': 'number', 'start': 204.76, 'end': 204.98}, {'word': 'Ah', 'start': 205.12, 'end': 205.31}, {'word': 'somebody', 'start': 209.47, 'end': 209.9}, {'word': 'I', 'start': 213.92000000000002, 'end': 214.2}, {'word': 'used', 'start': 214.21, 'end': 214.57}, {'word': 'to', 'start': 214.63, 'end': 214.88}, {'word': 'know', 'start': 214.88, 'end': 215.28}, {'word': 'Outro', 'start': 215.35, 'end': 215.51}, {'word': 'somebody', 'start': 215.51, 'end': 215.92000000000002}, {'word': 'that', 'start': 217.42000000000002, 'end': 217.69}, {'word': 'I', 'start': 217.69, 'end': 217.86}, {'word': 'used', 'start': 218.68, 'end': 218.72}, {'word': 'to', 'start': 218.72, 'end': 218.74}, {'word': 'know', 'start': 218.739999, 'end': 219.479999}, {'word': 'I', 'start': 221.39, 'end': 221.62}, {'word': 'used', 'start': 221.66, 'end': 221.99}, {'word': 'to', 'start': 222.05, 'end': 222.21}, {'word': 'know', 'start': 222.21, 'end': 222.63}, {'word': 'That', 'start': 224.88, 'end': 225.15}, {'word': 'I', 'start': 225.15, 'end': 225.24}, {'word': 'used', 'start': 225.339999, 'end': 225.559999}, {'word': 'to', 'start': 226.13, 'end': 226.18}, {'word': 'know', 'start': 226.179999, 'end': 227.049999}, {'word': 'I', 'start': 228.769999, 'end': 229.119999}, {'word': 'used', 'start': 229.13, 'end': 229.43}, {'word': 'to', 'start': 229.509999, 'end': 229.629999}, {'word': 'know', 'start': 229.

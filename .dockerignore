@@ -1,0 +1,22 @@
+# Python virtual environments
+idol-env/
+__pycache__/
+*.pyc
+
+
+# Frontend node_modules (in subdirectory)
+idol-singing-coach-frontend/
+idol-singing-coach-frontend/node_modules/
+idol-singing-coach-frontend/.next/
+idol-singing-coach-frontend/out/
+
+# Environment files
+.env*
+
+# Project directories
+songs/
+user_vocals/
+
+# System files
+.DS_Store.env
+.env.*

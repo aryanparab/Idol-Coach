@@ -1,0 +1,1539 @@
+{
+  "matched_lyrics": "and make it chasez justin timberlake i know that i can't take no more it ain't no lie i wanna see you out that door baby",
+  "start_time": 42.97,
+  "end_time": 54.66,
+  "comparison_metrics": {
+    "mfcc_mean_cosine_difference": 0.02369058132171631,
+    "mfcc_std_cosine_difference": 0.018757939338684082,
+    "chroma_mean_cosine_difference": 0.046995460987091064,
+    "chroma_std_cosine_difference": 0.020011723041534424,
+    "spectral_centroid_abs_diff": 1123.3457881131053,
+    "spectral_centroid_relative_diff": -0.5279487323368838,
+    "spectral_bandwidth_abs_diff": 875.1319369385152,
+    "spectral_bandwidth_relative_diff": -0.48373217569709076,
+    "spectral_flatness_abs_diff": 0.06272205710411072,
+    "spectral_flatness_relative_diff": 3.212841510772705,
+    "zcr_abs_diff": 0.08028380906541953,
+    "zcr_relative_diff": -0.4980193999548838,
+    "rms_abs_diff": 0.02308668941259384,
+    "rms_relative_diff": 0.2522571086883545,
+    "breath_count_abs_diff": 1,
+    "breath_count_relative_diff": 1.0,
+    "average_breath_duration_abs_diff": 0.064,
+    "average_breath_duration_relative_diff": 0.16666666666666666,
+    "vibrato_rate_abs_diff": 0.5590543994158451,
+    "vibrato_rate_relative_diff": -0.3712121212121212,
+    "vibrato_extent_abs_diff": 0.004989181378383209,
+    "vibrato_extent_relative_diff": -0.04647174931775858,
+    "vibrato_regularity_abs_diff": 0.24465746007994638,
+    "vibrato_regularity_relative_diff": 0.4718558437503377,
+    "formant_clarity_abs_diff": 1.3776585475421177,
+    "formant_clarity_relative_diff": 0.2847299419280203,
+    "vowel_definition_abs_diff": 0.10759986910032637,
+    "vowel_definition_relative_diff": -0.004165374275246404,
+    "spectral_contrast_mean_cosine_difference": 0.014988186255847302,
+    "spectral_contrast_std_cosine_difference": 0.07385871215378226,
+    "onset_sharpness_abs_diff": 3.015939712524414,
+    "onset_sharpness_relative_diff": 0.6269296407699585,
+    "onset_consistency_abs_diff": 0.0484241247177124,
+    "onset_consistency_relative_diff": -0.08658431470394135,
+    "attack_time_abs_diff": 0.16,
+    "attack_time_relative_diff": 1.0,
+    "dynamic_range_abs_diff": 0.12362195551395416,
+    "dynamic_range_relative_diff": 0.7236136794090271,
+    "expression_variation_abs_diff": 0.04972641170024872,
+    "expression_variation_relative_diff": 1.8948984146118164,
+    "sustain_stability_abs_diff": 0.41041046380996704,
+    "sustain_stability_relative_diff": -0.6541818380355835,
+    "average_energy_abs_diff": 0.02308668941259384,
+    "average_energy_relative_diff": 0.2522571086883545,
+    "pitch_drift_abs_diff": 0.13578010248928563,
+    "pitch_drift_relative_diff": 2.4109451113934868,
+    "pitch_stability_abs_diff": 0.009684900222422743,
+    "pitch_stability_relative_diff": 0.011003964963610419,
+    "intonation_accuracy_abs_diff": 0.10174173815623777,
+    "intonation_accuracy_relative_diff": -0.1557604345446054,
+    "vocal_fry_amount_abs_diff": 0.034970528709451776,
+    "vocal_fry_amount_relative_diff": -1.0,
+    "voice_quality_abs_diff": 0.03497052870945172,
+    "voice_quality_relative_diff": 0.03623778314530137,
+    "pitch_dtw_distance": 219.74520449354645
+  },
+  "coaching_level": "intermediate",
+  "breath_analysis": {
+    "breath_count": 2,
+    "average_breath_duration": 0.448,
+    "breath_efficiency": 0.5
+  },
+  "technical_summary": {
+    "pitch_accuracy": 0.5514519849718382,
+    "vocal_stability": 0.8898131316781063,
+    "breath_support": 0.2169540524482727,
+    "expression_level": 0.0759686678647995,
+    "vibrato_quality": 0.7631578947368421,
+    "onset_quality": 7.826590538024902,
+    "voice_quality": 1.0,
+    "dynamic_range": 0.2944616675376892
+  },
+  "advanced_metrics": {
+    "formant_clarity": 6.216132991829363,
+    "vowel_definition": 25.724381122322413,
+    "vocal_fry_amount": 0.0,
+    "attack_time": 0.32,
+    "pitch_drift": 0.19209830809571976
+  },
+  "granular_feedback": {
+    "summary": "\ud83d\udea8 Priority fixes needed: k at 1.40-1.44s, e at 1.44-1.48s,   at 1.48-1.52s | \ud83d\udd27 Areas to improve: a at 0.00-0.04s, a at 0.00-0.04s, n at 0.04-0.08s",
+    "detailed_feedback": [
+      {
+        "word": "a",
+        "timestamp": "0.00-0.04s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 100% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 100% darker than reference",
+          "\ud83d\udca1 'a' needs more vocal energy and projection. The original singer uses inf% more power here.",
+          "\ud83d\udca1 On 'a', try a brighter tone quality. The original has a clearer sound here."
+        ]
+      },
+      {
+        "word": "n",
+        "timestamp": "0.04-0.08s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 100% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 100% darker than reference",
+          "\ud83d\udca1 'n' needs more vocal energy and projection. The original singer uses inf% more power here.",
+          "\ud83d\udca1 On 'n', try a brighter tone quality. The original has a clearer sound here."
+        ]
+      },
+      {
+        "word": "d",
+        "timestamp": "0.08-0.12s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 100% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 100% darker than reference",
+          "\ud83d\udca1 'd' needs more vocal energy and projection. The original singer uses inf% more power here.",
+          "\ud83d\udca1 On 'd', try a brighter tone quality. The original has a clearer sound here."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "0.12-0.16s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 100% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 100% darker than reference",
+          "\ud83d\udca1 ' ' needs more vocal energy and projection. The original singer uses inf% more power here.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here."
+        ]
+      },
+      {
+        "word": "m",
+        "timestamp": "0.16-0.21s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 100% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 100% darker than reference",
+          "\ud83d\udca1 'm' needs more vocal energy and projection. The original singer uses inf% more power here.",
+          "\ud83d\udca1 On 'm', try a brighter tone quality. The original has a clearer sound here."
+        ]
+      },
+      {
+        "word": "a",
+        "timestamp": "0.21-0.25s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 100% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 100% darker than reference",
+          "\ud83d\udca1 'a' needs more vocal energy and projection. The original singer uses inf% more power here.",
+          "\ud83d\udca1 On 'a', try a brighter tone quality. The original has a clearer sound here."
+        ]
+      },
+      {
+        "word": "k",
+        "timestamp": "0.25-0.29s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 100% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 100% darker than reference",
+          "\ud83d\udca1 'k' needs more vocal energy and projection. The original singer uses inf% more power here.",
+          "\ud83d\udca1 On 'k', try a brighter tone quality. The original has a clearer sound here."
+        ]
+      },
+      {
+        "word": "e",
+        "timestamp": "0.29-0.33s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 100% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 100% darker than reference",
+          "\ud83d\udca1 'e' needs more vocal energy and projection. The original singer uses inf% more power here.",
+          "\ud83d\udca1 On 'e', try a brighter tone quality. The original has a clearer sound here."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "0.33-0.37s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 100% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 44% brighter than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.54)",
+          "\ud83d\udca1 ' ' needs more vocal energy and projection. The original singer uses 50471256064% more power here.",
+          "\ud83d\udca1 On ' ', try a darker tone quality. The original has a warmer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "i",
+        "timestamp": "0.37-0.41s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 99% lower than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.59)",
+          "\ud83d\udca1 'i' needs more vocal energy and projection. The original singer uses 6763% more power here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'i'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "t",
+        "timestamp": "0.41-0.45s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 95% lower than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.63)",
+          "\ud83d\udca1 't' needs more vocal energy and projection. The original singer uses 2019% more power here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 't'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "0.45-0.49s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 95% lower than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.63)",
+          "\ud83d\udca1 ' ' needs more vocal energy and projection. The original singer uses 2013% more power here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "c",
+        "timestamp": "0.49-0.53s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 95% lower than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.50)",
+          "\ud83d\udca1 'c' needs more vocal energy and projection. The original singer uses 2105% more power here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'c'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "h",
+        "timestamp": "0.53-0.58s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 99% lower than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.52)",
+          "\ud83d\udca1 'h' needs more vocal energy and projection. The original singer uses 9437% more power here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'h'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "a",
+        "timestamp": "0.58-0.62s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 96% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 33% brighter than reference",
+          "\ud83d\udca1 'a' needs more vocal energy and projection. The original singer uses 2763% more power here.",
+          "\ud83d\udca1 On 'a', try a darker tone quality. The original has a warmer sound here."
+        ]
+      },
+      {
+        "word": "s",
+        "timestamp": "0.62-0.66s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 96% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 29% brighter than reference",
+          "\ud83d\udca1 's' needs more vocal energy and projection. The original singer uses 2687% more power here.",
+          "\ud83d\udca1 On 's', try a darker tone quality. The original has a warmer sound here."
+        ]
+      },
+      {
+        "word": "e",
+        "timestamp": "0.66-0.70s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 96% lower than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.77)",
+          "\ud83d\udca1 'e' needs more vocal energy and projection. The original singer uses 2761% more power here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'e'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "z",
+        "timestamp": "0.70-0.74s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 42% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 23% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.46)",
+          "\ud83d\udca1 'z' needs more vocal energy and projection. The original singer uses 172% more power here.",
+          "\ud83d\udca1 On 'z', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'z'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "0.74-0.78s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 55% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.24)",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "j",
+        "timestamp": "0.78-0.82s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 63% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.18)",
+          "\ud83d\udca1 'j' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'j', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'j'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "u",
+        "timestamp": "0.82-0.86s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 64% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.21)",
+          "\ud83d\udca1 'u' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'u', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'u'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "s",
+        "timestamp": "0.86-0.90s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 68% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.28)",
+          "\ud83d\udca1 's' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 's', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 's'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "t",
+        "timestamp": "0.90-0.94s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 61% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.41)",
+          "\ud83d\udca1 On 't', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 't'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "i",
+        "timestamp": "0.94-0.99s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 85% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 54% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.55)",
+          "\ud83d\udca1 'i' needs more vocal energy and projection. The original singer uses 658% more power here.",
+          "\ud83d\udca1 On 'i', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'i'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "n",
+        "timestamp": "0.99-1.03s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 85% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 31% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.30)",
+          "\ud83d\udca1 'n' needs more vocal energy and projection. The original singer uses 652% more power here.",
+          "\ud83d\udca1 On 'n', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'n'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "1.03-1.07s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 83% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 22% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.33)",
+          "\ud83d\udca1 ' ' needs more vocal energy and projection. The original singer uses 593% more power here.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "t",
+        "timestamp": "1.07-1.11s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 84% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 21% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.30)",
+          "\ud83d\udca1 't' needs more vocal energy and projection. The original singer uses 632% more power here.",
+          "\ud83d\udca1 On 't', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 't'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "i",
+        "timestamp": "1.11-1.15s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 87% lower than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.34)",
+          "\ud83d\udca1 'i' needs more vocal energy and projection. The original singer uses 788% more power here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'i'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "m",
+        "timestamp": "1.15-1.19s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 90% lower than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.16)",
+          "\ud83d\udca1 'm' needs more vocal energy and projection. The original singer uses 965% more power here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'm'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "b",
+        "timestamp": "1.19-1.23s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 92% lower than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.22)",
+          "\ud83d\udca1 'b' needs more vocal energy and projection. The original singer uses 1276% more power here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'b'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "e",
+        "timestamp": "1.23-1.27s",
+        "feedback": [
+          "\u26a1 Energy: Energy is 94% lower than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.18)",
+          "\ud83d\udca1 'e' needs more vocal energy and projection. The original singer uses 1705% more power here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'e'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "r",
+        "timestamp": "1.27-1.31s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 51% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.16)",
+          "\ud83d\udca1 On 'r', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'r'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "l",
+        "timestamp": "1.31-1.36s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 58% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.30)",
+          "\ud83d\udca1 'l' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'l', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'l'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "a",
+        "timestamp": "1.36-1.40s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 55% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.37)",
+          "\ud83d\udca1 'a' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'a', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'a'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "k",
+        "timestamp": "1.40-1.44s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1160 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 52% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.52)",
+          "\ud83d\udca1 The word 'k' should be sung 1160 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'k' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'k', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'k'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "e",
+        "timestamp": "1.44-1.48s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1140 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 52% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.56)",
+          "\ud83d\udca1 The word 'e' should be sung 1140 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'e' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'e', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'e'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "1.48-1.52s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1110 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 51% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.31)",
+          "\ud83d\udca1 The word ' ' should be sung 1110 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "i",
+        "timestamp": "1.52-1.56s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1090 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 48% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.37)",
+          "\ud83d\udca1 The word 'i' should be sung 1090 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'i' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'i', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'i'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "1.56-1.60s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1160 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 58% darker than reference",
+          "\ud83d\udca1 The word ' ' should be sung 1160 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On ' ', focus on steady breath support to reduce pitch wavering. The original has more stable pitch here.",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here."
+        ]
+      },
+      {
+        "word": "k",
+        "timestamp": "1.60-1.64s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1340 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 74% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.67)",
+          "\ud83d\udca1 The word 'k' should be sung 1340 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'k' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'k', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'k'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "n",
+        "timestamp": "1.64-1.68s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1400 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 64% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.50)",
+          "\ud83d\udca1 The word 'n' should be sung 1400 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'n' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'n', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'n'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "o",
+        "timestamp": "1.68-1.73s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1430 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 60% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.51)",
+          "\ud83d\udca1 The word 'o' should be sung 1430 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'o' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'o', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'o'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "w",
+        "timestamp": "1.73-1.77s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1470 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 65% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.55)",
+          "\ud83d\udca1 The word 'w' should be sung 1470 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'w' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'w', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'w'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "1.77-1.81s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1490 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 69% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.54)",
+          "\ud83d\udca1 The word ' ' should be sung 1490 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "t",
+        "timestamp": "1.81-1.85s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1490 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 69% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.45)",
+          "\ud83d\udca1 The word 't' should be sung 1490 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 't' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 't', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 't'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "h",
+        "timestamp": "1.85-1.89s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1495 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 73% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.35)",
+          "\ud83d\udca1 The word 'h' should be sung 1495 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'h' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'h', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'h'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "a",
+        "timestamp": "1.89-1.93s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1510 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 63% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.62)",
+          "\ud83d\udca1 The word 'a' should be sung 1510 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'a' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'a', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'a'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "t",
+        "timestamp": "1.93-1.97s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1540 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 58% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.79)",
+          "\ud83d\udca1 The word 't' should be sung 1540 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 't' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 't', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 't'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "1.97-2.01s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1560 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 52% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.72)",
+          "\ud83d\udca1 The word ' ' should be sung 1560 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "i",
+        "timestamp": "2.01-2.05s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1595 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 47% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.30)",
+          "\ud83d\udca1 The word 'i' should be sung 1595 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'i' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'i', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'i'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "2.05-2.10s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1630 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 48% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.16)",
+          "\ud83d\udca1 The word ' ' should be sung 1630 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "c",
+        "timestamp": "2.10-2.14s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1650 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 51% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.19)",
+          "\ud83d\udca1 The word 'c' should be sung 1650 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'c' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'c', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'c'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "a",
+        "timestamp": "2.14-2.18s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1675 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 56% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.48)",
+          "\ud83d\udca1 The word 'a' should be sung 1675 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'a' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'a', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'a'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "n",
+        "timestamp": "2.18-2.22s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 54% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.40)",
+          "\ud83d\udca1 'n' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'n', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'n'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "'",
+        "timestamp": "2.22-2.26s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 53% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.51)",
+          "\ud83d\udca1 ''' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ''', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on '''. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "t",
+        "timestamp": "2.26-2.30s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 57% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.74)",
+          "\ud83d\udca1 't' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 't', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 't'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "2.30-2.34s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1780 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 47% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.66)",
+          "\ud83d\udca1 The word ' ' should be sung 1780 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "t",
+        "timestamp": "2.34-2.38s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1760 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 60% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.26)",
+          "\ud83d\udca1 The word 't' should be sung 1760 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 't', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 't'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "a",
+        "timestamp": "2.38-2.42s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1760 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 70% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.17)",
+          "\ud83d\udca1 The word 'a' should be sung 1760 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'a', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'a'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "k",
+        "timestamp": "2.42-2.46s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1765 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 65% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.12)",
+          "\ud83d\udca1 The word 'k' should be sung 1765 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'k', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'k'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "e",
+        "timestamp": "2.46-2.51s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1640 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 48% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.20)",
+          "\ud83d\udca1 The word 'e' should be sung 1640 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'e' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'e', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'e'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "2.51-2.55s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1650 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 60% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.15)",
+          "\ud83d\udca1 The word ' ' should be sung 1650 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "n",
+        "timestamp": "2.55-2.59s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1650 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 64% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.13)",
+          "\ud83d\udca1 The word 'n' should be sung 1650 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'n' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'n', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'n'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "o",
+        "timestamp": "2.59-2.63s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1650 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 60% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.11)",
+          "\ud83d\udca1 The word 'o' should be sung 1650 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'o' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'o', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'o'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "2.63-2.67s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1650 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 62% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.14)",
+          "\ud83d\udca1 The word ' ' should be sung 1650 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "m",
+        "timestamp": "2.67-2.71s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1650 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 65% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.21)",
+          "\ud83d\udca1 The word 'm' should be sung 1650 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'm' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'm', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'm'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "o",
+        "timestamp": "2.71-2.75s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1550 cents flat",
+          "\u26a1 Energy: Energy is 47% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 76% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.46)",
+          "\ud83d\udca1 The word 'o' should be sung 1550 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'o', focus on steady breath support to reduce pitch wavering. The original has more stable pitch here.",
+          "\ud83d\udca1 'o' needs more vocal energy and projection. The original singer uses 189% more power here.",
+          "\ud83d\udca1 On 'o', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'o'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "r",
+        "timestamp": "2.75-2.79s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1400 cents flat",
+          "\u26a1 Energy: Energy is 33% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 86% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.55)",
+          "\ud83d\udca1 The word 'r' should be sung 1400 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'r' needs more vocal energy and projection. The original singer uses 148% more power here.",
+          "\ud83d\udca1 On 'r', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'r'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "e",
+        "timestamp": "2.79-2.83s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1490 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 80% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.53)",
+          "\ud83d\udca1 The word 'e' should be sung 1490 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'e', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'e'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "2.83-2.88s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1470 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 74% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.45)",
+          "\ud83d\udca1 The word ' ' should be sung 1470 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "i",
+        "timestamp": "2.88-2.92s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1445 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 69% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.53)",
+          "\ud83d\udca1 The word 'i' should be sung 1445 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'i' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'i', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'i'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "t",
+        "timestamp": "2.92-2.96s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1430 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 71% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.48)",
+          "\ud83d\udca1 The word 't' should be sung 1430 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 't' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 't', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 't'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "2.96-3.00s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1430 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 73% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.48)",
+          "\ud83d\udca1 The word ' ' should be sung 1430 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "a",
+        "timestamp": "3.00-3.04s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1445 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 78% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.48)",
+          "\ud83d\udca1 The word 'a' should be sung 1445 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'a' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'a', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'a'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "i",
+        "timestamp": "3.04-3.08s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1430 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 84% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.47)",
+          "\ud83d\udca1 The word 'i' should be sung 1430 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'i', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'i'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "n",
+        "timestamp": "3.08-3.12s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1430 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 79% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.52)",
+          "\ud83d\udca1 The word 'n' should be sung 1430 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'n' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'n', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'n'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "'",
+        "timestamp": "3.12-3.16s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1430 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 75% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.48)",
+          "\ud83d\udca1 The word ''' should be sung 1430 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 ''' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ''', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on '''. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "t",
+        "timestamp": "3.16-3.20s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1435 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 69% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.49)",
+          "\ud83d\udca1 The word 't' should be sung 1435 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 't' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 't', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 't'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "3.20-3.25s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1460 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 60% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.53)",
+          "\ud83d\udca1 The word ' ' should be sung 1460 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "n",
+        "timestamp": "3.25-3.29s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1490 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 56% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.42)",
+          "\ud83d\udca1 The word 'n' should be sung 1490 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'n' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'n', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'n'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "o",
+        "timestamp": "3.29-3.33s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1530 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 59% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.31)",
+          "\ud83d\udca1 The word 'o' should be sung 1530 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'o' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'o', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'o'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "3.33-3.37s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1580 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 66% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.25)",
+          "\ud83d\udca1 The word ' ' should be sung 1580 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "l",
+        "timestamp": "3.37-3.41s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 77% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.18)",
+          "\ud83d\udca1 On 'l', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'l'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "i",
+        "timestamp": "3.41-3.45s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 71% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.16)",
+          "\ud83d\udca1 On 'i', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'i'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "e",
+        "timestamp": "3.45-3.49s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 62% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.25)",
+          "\ud83d\udca1 On 'e', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'e'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "3.49-3.53s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1900 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 59% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.32)",
+          "\ud83d\udca1 The word ' ' should be sung 1900 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "i",
+        "timestamp": "3.53-3.57s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1880 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 70% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.53)",
+          "\ud83d\udca1 The word 'i' should be sung 1880 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'i', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'i'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "3.57-3.62s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1830 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 68% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.61)",
+          "\ud83d\udca1 The word ' ' should be sung 1830 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "w",
+        "timestamp": "3.62-3.66s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1835 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 66% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.75)",
+          "\ud83d\udca1 The word 'w' should be sung 1835 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'w', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'w'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "a",
+        "timestamp": "3.66-3.70s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1780 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 71% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.66)",
+          "\ud83d\udca1 The word 'a' should be sung 1780 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'a', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'a'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "n",
+        "timestamp": "3.70-3.74s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1720 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 65% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.30)",
+          "\ud83d\udca1 The word 'n' should be sung 1720 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'n', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'n'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "n",
+        "timestamp": "3.74-3.78s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1675 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 55% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.16)",
+          "\ud83d\udca1 The word 'n' should be sung 1675 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'n', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'n'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "a",
+        "timestamp": "3.78-3.82s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1630 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 50% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.13)",
+          "\ud83d\udca1 The word 'a' should be sung 1630 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'a', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'a'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "3.82-3.86s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1620 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 45% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.17)",
+          "\ud83d\udca1 The word ' ' should be sung 1620 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "s",
+        "timestamp": "3.86-3.90s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1610 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 47% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.20)",
+          "\ud83d\udca1 The word 's' should be sung 1610 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 's', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 's'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "e",
+        "timestamp": "3.90-3.94s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1615 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 62% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.16)",
+          "\ud83d\udca1 The word 'e' should be sung 1615 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'e', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'e'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "e",
+        "timestamp": "3.94-3.99s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1610 cents flat",
+          "\u26a1 Energy: Energy is 41% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 84% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.11)",
+          "\ud83d\udca1 The word 'e' should be sung 1610 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'e' needs more vocal energy and projection. The original singer uses 168% more power here.",
+          "\ud83d\udca1 On 'e', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'e'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "3.99-4.03s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1560 cents flat",
+          "\u26a1 Energy: Energy is 47% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 87% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.25)",
+          "\ud83d\udca1 The word ' ' should be sung 1560 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 ' ' needs more vocal energy and projection. The original singer uses 189% more power here.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "y",
+        "timestamp": "4.03-4.07s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1415 cents flat",
+          "\u26a1 Energy: Energy is 35% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 78% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.47)",
+          "\ud83d\udca1 The word 'y' should be sung 1415 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'y', focus on steady breath support to reduce pitch wavering. The original has more stable pitch here.",
+          "\ud83d\udca1 'y' needs more vocal energy and projection. The original singer uses 153% more power here.",
+          "\ud83d\udca1 On 'y', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'y'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "o",
+        "timestamp": "4.07-4.11s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1340 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 60% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.55)",
+          "\ud83d\udca1 The word 'o' should be sung 1340 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'o', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'o'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "u",
+        "timestamp": "4.11-4.15s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1330 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 58% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.52)",
+          "\ud83d\udca1 The word 'u' should be sung 1330 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'u', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'u'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "4.15-4.19s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1330 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 62% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.52)",
+          "\ud83d\udca1 The word ' ' should be sung 1330 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "o",
+        "timestamp": "4.19-4.23s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1360 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 67% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.54)",
+          "\ud83d\udca1 The word 'o' should be sung 1360 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'o', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'o'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "u",
+        "timestamp": "4.23-4.27s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1410 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 71% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.50)",
+          "\ud83d\udca1 The word 'u' should be sung 1410 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'u' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'u', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'u'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "t",
+        "timestamp": "4.27-4.31s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1430 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 71% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.48)",
+          "\ud83d\udca1 The word 't' should be sung 1430 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 't' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 't', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 't'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "4.31-4.35s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1460 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 66% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.29)",
+          "\ud83d\udca1 The word ' ' should be sung 1460 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "t",
+        "timestamp": "4.35-4.40s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1470 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 65% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.14)",
+          "\ud83d\udca1 The word 't' should be sung 1470 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 't' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 't', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 't'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "h",
+        "timestamp": "4.40-4.44s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1500 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 52% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.36)",
+          "\ud83d\udca1 The word 'h' should be sung 1500 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'h' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'h', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'h'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "a",
+        "timestamp": "4.44-4.48s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1520 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 40% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.62)",
+          "\ud83d\udca1 The word 'a' should be sung 1520 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'a' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'a', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'a'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "t",
+        "timestamp": "4.48-4.52s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1565 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 39% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.50)",
+          "\ud83d\udca1 The word 't' should be sung 1565 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 't' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 't', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 't'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "4.52-4.56s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 50% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.27)",
+          "\ud83d\udca1 ' ' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "d",
+        "timestamp": "4.56-4.60s",
+        "feedback": [
+          "\ud83c\udfa8 Tone: Tone is 47% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.25)",
+          "\ud83d\udca1 'd' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'd', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'd'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "o",
+        "timestamp": "4.60-4.64s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1760 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 40% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.33)",
+          "\ud83d\udca1 The word 'o' should be sung 1760 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'o' could be sung with less force. Try a more relaxed approach like in the original.",
+          "\ud83d\udca1 On 'o', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'o'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "o",
+        "timestamp": "4.64-4.68s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1770 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 37% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.35)",
+          "\ud83d\udca1 The word 'o' should be sung 1770 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'o', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'o'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "r",
+        "timestamp": "4.68-4.72s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1790 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 41% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.40)",
+          "\ud83d\udca1 The word 'r' should be sung 1790 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'r', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'r'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": " ",
+        "timestamp": "4.72-4.77s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1820 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 42% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.60)",
+          "\ud83d\udca1 The word ' ' should be sung 1820 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On ' ', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on ' '. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "b",
+        "timestamp": "4.77-4.81s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1845 cents flat",
+          "\ud83c\udfa8 Tone: Tone is 45% darker than reference",
+          "\ud83d\udca1 The word 'b' should be sung 1845 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 On 'b', try a brighter tone quality. The original has a clearer sound here."
+        ]
+      },
+      {
+        "word": "a",
+        "timestamp": "4.81-4.85s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1850 cents flat",
+          "\u26a1 Energy: Energy is 35% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 53% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.64)",
+          "\ud83d\udca1 The word 'a' should be sung 1850 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'a' needs more vocal energy and projection. The original singer uses 155% more power here.",
+          "\ud83d\udca1 On 'a', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'a'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "b",
+        "timestamp": "4.85-4.89s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1840 cents flat",
+          "\u26a1 Energy: Energy is 58% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 62% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.45)",
+          "\ud83d\udca1 The word 'b' should be sung 1840 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'b' needs more vocal energy and projection. The original singer uses 237% more power here.",
+          "\ud83d\udca1 On 'b', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'b'. Listen to how the original singer shapes this vowel."
+        ]
+      },
+      {
+        "word": "y",
+        "timestamp": "4.89-4.93s",
+        "feedback": [
+          "\ud83c\udfb5 Pitch issue: Pitch is 1840 cents flat",
+          "\u26a1 Energy: Energy is 87% lower than reference",
+          "\ud83c\udfa8 Tone: Tone is 53% darker than reference",
+          "\ud83d\udde3\ufe0f Vowel: Vowel formation differs from reference (similarity: 0.19)",
+          "\ud83d\udca1 The word 'y' should be sung 1840 cents higher. Try imagining the pitch lifting slightly on this word.",
+          "\ud83d\udca1 'y' needs more vocal energy and projection. The original singer uses 789% more power here.",
+          "\ud83d\udca1 On 'y', try a brighter tone quality. The original has a clearer sound here.",
+          "\ud83d\udca1 Focus on clearer vowel formation on 'y'. Listen to how the original singer shapes this vowel."
+        ]
+      }
+    ],
+    "stats": {
+      "high_priority_issues": 78,
+      "medium_priority_issues": 252,
+      "strengths": 0,
+      "words_analyzed": 120
+    }
+  },
+  "dtw_analysis": {
+    "distance": 219.74520449354645,
+    "alignment_quality": 0.004530109735766583
+  }
+}

@@ -1,0 +1,9 @@
+Files working 
+
+song_fetcher.py, get_lyrics_from_genius  - downloads the song from youtube and fetching lyrics using genius
+extract_from_audio.py - gets vocals from the downloaded song using demucs
+
+
+
+
+aligner.py - uses whisper to transcribe, then runs python code on pre-fetecher lyrivs to create alignment
