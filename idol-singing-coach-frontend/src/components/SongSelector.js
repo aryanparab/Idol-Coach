@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Search, Music, Play, Loader } from 'lucide-react'
 import { fetchSongs, prepareSong } from '../../lib/api'
-import '../styles/SongSelector.css'
+import '../styles/Songselector.css'
 
 export default function SongSelector({ onSongSelected }) {
   const [songs, setSongs] = useState([])
