@@ -1,7 +1,7 @@
 // API service for handling requests to the backend
 class ApiService {
   constructor() {
-    this.baseUrl = 'http://localhost:8000';
+    this.baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
     this.abortController = null;
   }
 

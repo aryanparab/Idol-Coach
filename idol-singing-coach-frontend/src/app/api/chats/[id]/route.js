@@ -13,13 +13,13 @@ export async function GET(request, { params }) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
         }
 
-        const { id } = params
+        const { id } = await params   // Next.js 15: params must be awaited
         if (!ObjectId.isValid(id)) {
             return NextResponse.json({ error: 'Invalid chat ID' }, { status: 400 })
         }
 
         const { db } = await connectToDatabase()
-        
+
         const chat = await db.collection('chats').findOne({
             _id: new ObjectId(id),
             userEmail: session.user.email
@@ -39,12 +39,12 @@ export async function GET(request, { params }) {
 export async function PUT(request, { params }) {
     try {
         const session = await getServerSession(authOptions)
-    
+
         if (!session?.user?.email) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
         }
 
-        const { id } = params // FIX: This was missing!
+        const { id } = await params   // Next.js 15: params must be awaited
         const { song, messages, userEmail } = await request.json()
 
         if (!ObjectId.isValid(id)) {
@@ -56,7 +56,7 @@ export async function PUT(request, { params }) {
         }
 
         const { db } = await connectToDatabase()
-        
+
         const result = await db.collection('chats').updateOne(
             {
                 _id: new ObjectId(id),
@@ -87,19 +87,19 @@ export async function PUT(request, { params }) {
 export async function DELETE(request, { params }) {
     try {
         const session = await getServerSession(authOptions)
-        
+
         if (!session?.user?.email) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
         }
 
-        const { id } = params
+        const { id } = await params   // Next.js 15: params must be awaited
 
         if (!ObjectId.isValid(id)) {
             return NextResponse.json({ error: 'Invalid chat ID' }, { status: 400 })
         }
 
         const { db } = await connectToDatabase()
-        
+
         const result = await db.collection('chats').deleteOne({
             _id: new ObjectId(id),
             userEmail: session.user.email

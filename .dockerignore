@@ -1,22 +1,32 @@
-# Python virtual environments
+# Python virtual environment
 idol-env/
 __pycache__/
 *.pyc
+*.pyo
+*.egg-info/
 
-
-# Frontend node_modules (in subdirectory)
-idol-singing-coach-frontend/
-idol-singing-coach-frontend/node_modules/
-idol-singing-coach-frontend/.next/
-idol-singing-coach-frontend/out/
-
-# Environment files
-.env*
-
-# Project directories
+# Local song cache — EC2 downloads from S3 on demand
 songs/
+cache_manifest.json
 user_vocals/
+user_transcriptions/
 
-# System files
-.DS_Store.env
+# Secrets — injected as env vars at runtime
+.env
 .env.*
+.env.local
+
+# Frontend — deployed separately to Vercel
+idol-singing-coach-frontend/
+
+# Dev/test artefacts
+test_codes/
+*.log
+.pytest_cache/
+
+# Git + editor
+.git/
+.gitignore
+.DS_Store
+.vscode/
+.idea/

@@ -81,20 +81,32 @@ async def analyze_user_audio(
         if not song:
             raise HTTPException(status_code=404, detail=f"Song '{song_name}' not found in database")
 
-        # Verify required fields exist
-        if "timestamp_lyrics" not in song or "vocals_path" not in song:
+        # Verify required fields exist AND are non-null.
+        # Songs processed before gentle-aligner was set up have timestamp_lyrics=None.
+        timestamp_lyrics = song.get("timestamp_lyrics")
+        vocals_path      = song.get("vocals_path")
+
+        if not timestamp_lyrics:
             raise HTTPException(
-                status_code=400, 
-                detail="Song data incomplete - missing timestamp_lyrics or vocals_path"
+                status_code=400,
+                detail=(
+                    f"Song '{song.get('title', song_name)}' has no word-level alignment yet "
+                    "(timestamp_lyrics is missing). Re-process the song to generate it."
+                ),
+            )
+        if not vocals_path:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Song '{song.get('title', song_name)}' is missing vocals_path.",
             )
 
         # Process the audio analysis
         try:
             analysis = process_user_audio(
                 user_audio_path,
-                song["timestamp_lyrics"],
-                song["vocals_path"],
-                file_id  # Pass file_id for transcription naming
+                timestamp_lyrics,
+                vocals_path,
+                file_id,
             )
             return analysis
             

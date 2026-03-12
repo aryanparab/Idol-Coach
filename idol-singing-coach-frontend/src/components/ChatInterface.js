@@ -103,7 +103,30 @@ export default function ChatInterface({ song = "Unknown Song", chatData = null, 
     }
   }, [song, session?.user?.email, onChatUpdate]);
 
-  // Fixed: Immediate message adding with proper state update
+  // Batch-add multiple messages in a single state update + single DB save.
+  // Use this instead of calling addMessage() twice in quick succession to avoid
+  // the race condition where both calls see chatId=null and create two separate chats.
+  const addMessages = useCallback((items) => {
+    const now = Date.now();
+    const newMessages = items.map((item, i) => ({
+      role: item.role,
+      content: item.content,
+      sender: item.role,
+      text: typeof item.content === 'string' ? item.content : JSON.stringify(item.content),
+      timestamp: new Date(now + i).toISOString(),
+      ...(item.metadata || {}),
+    }));
+
+    setMessages(prev => {
+      const updated = [...prev, ...newMessages];
+      saveToDatabase(updated, chatId).then(newChatId => {
+        if (newChatId && newChatId !== chatId) setChatId(newChatId);
+      }).catch(err => console.error('Failed to save messages:', err));
+      return updated;
+    });
+  }, [chatId, saveToDatabase]);
+
+  // Single-message add (used for text chat and error messages)
   const addMessage = useCallback((role, content, metadata = {}) => {
     const newMessage = {
       role,
@@ -136,14 +159,11 @@ export default function ChatInterface({ song = "Unknown Song", chatData = null, 
     }
     if (!audioBlob) return;
 
-    // Add user message first
-    addMessage('user', '🎵 Voice recording', { voice_analysis: audioBlob });
-    
     setIsProcessing(true);
     try {
       const result = await apiService.analyzeAudio(audioBlob, song);
-      
-      // Extract the actual response content properly
+
+      // Extract coaching text from response
       let assistantResponse;
       if (typeof result === 'string') {
         assistantResponse = result;
@@ -154,15 +174,32 @@ export default function ChatInterface({ song = "Unknown Song", chatData = null, 
       } else {
         assistantResponse = JSON.stringify(result);
       }
-      
-      addMessage('assistant', assistantResponse);
+
+      // Batch-add BOTH messages in one DB save:
+      //  - user message carries the real analysis JSON (not the raw Blob)
+      //    so the chatbot can retrieve it later via get_user_singing_data_tool
+      //  - assistant message carries the coaching text
+      addMessages([
+        {
+          role: 'user',
+          content: '🎵 Voice recording',
+          metadata: { voice_analysis: result.voice_analysis || null },
+        },
+        {
+          role: 'assistant',
+          content: assistantResponse,
+        },
+      ]);
     } catch (err) {
       console.error('Audio processing error:', err);
-      addMessage('assistant', `There was an issue analyzing your recording: ${err.message}`);
+      addMessages([
+        { role: 'user', content: '🎵 Voice recording' },
+        { role: 'assistant', content: `There was an issue analyzing your recording: ${err.message}` },
+      ]);
     } finally {
       setIsProcessing(false);
     }
-  }, [song, addMessage]);
+  }, [song, addMessages]);
 
   const handleSendText = useCallback(async () => {
     if (!inputText.trim() || isProcessing || recording) return;
@@ -208,9 +245,6 @@ export default function ChatInterface({ song = "Unknown Song", chatData = null, 
   return (
     <div className="chat-container">
       <ChatHeader song={song} chatId={chatId} />
-      <div style={{ padding: '10px', backgroundColor: '#f0f0f0', fontSize: '12px' }}>
-        DEBUG: Messages: {messages.length}, ChatId: {chatId || 'none'}, Processing: {isProcessing ? 'yes' : 'no'}
-      </div>
       <MessageList messages={messages} isProcessing={isProcessing} />
       <InputControls
         inputText={inputText}

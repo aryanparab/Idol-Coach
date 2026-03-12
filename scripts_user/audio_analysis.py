@@ -1,3 +1,4 @@
+import math
 import numpy as np
 import librosa
 from scipy.spatial.distance import cosine
@@ -5,9 +6,32 @@ from scipy import signal
 from scipy.ndimage import gaussian_filter1d
 import json
 from scripts_user.compare_pitch_dtw import segment_pitch_contour, compare_with_dtw, extract_pitch_contour
-import os 
+import os
 from s3_handler import storage
 import tempfile
+
+
+_NOTE_NAMES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
+
+def hz_to_note_name(hz: float) -> str:
+    """Convert a frequency in Hz to the nearest note name with octave, e.g. 'A4', 'G#3'."""
+    if not hz or hz <= 0:
+        return "?"
+    # A4 = 440 Hz = MIDI 69
+    midi = round(12 * math.log2(hz / 440.0)) + 69
+    midi = max(0, min(midi, 127))
+    return f"{_NOTE_NAMES[midi % 12]}{(midi // 12) - 1}"
+
+
+def _cents_description(cents: float) -> str:
+    """Return a human-readable interval description for a cents offset."""
+    abs_c = abs(cents)
+    if abs_c < 20:   return "essentially in tune"
+    if abs_c < 50:   return "slightly off"
+    if abs_c < 110:  return "about a half-step off"
+    if abs_c < 210:  return "about a whole step off"
+    return "quite far off"
+
 
 class ComprehensiveVocalAnalyzer:
     """
@@ -428,43 +452,68 @@ class ComprehensiveVocalAnalyzer:
         ref_pitch_clean = ref_pitch[~np.isnan(ref_pitch) & (ref_pitch > 0)]
         
         if len(user_pitch_clean) > 0 and len(ref_pitch_clean) > 0:
-            # Convert to cents for comparison
+            # Raw Hz averages — we send BOTH sides to the LLM so it can speak
+            # in note names rather than abstract "cents flat" descriptions.
+            user_hz_avg = float(np.mean(user_pitch_clean))
+            ref_hz_avg  = float(np.mean(ref_pitch_clean))
+            user_note   = hz_to_note_name(user_hz_avg)
+            ref_note    = hz_to_note_name(ref_hz_avg)
+
+            # Cents difference for severity classification
             user_cents = 1200 * np.log2(user_pitch_clean / 440)
-            ref_cents = 1200 * np.log2(ref_pitch_clean / 440)
-            
-            pitch_diff = np.mean(user_cents) - np.mean(ref_cents)
+            ref_cents  = 1200 * np.log2(ref_pitch_clean  / 440)
+
+            pitch_diff      = np.mean(user_cents) - np.mean(ref_cents)
             pitch_stability = np.std(user_cents)
-            ref_stability = np.std(ref_cents)
-            
+            ref_stability   = np.std(ref_cents)
+
             if abs(pitch_diff) > tolerance_cents:
-                direction = "sharp" if pitch_diff > 0 else "flat"
-                cents_off = abs(pitch_diff)
+                direction  = "sharp" if pitch_diff > 0 else "flat"
+                cents_off  = abs(pitch_diff)
+                interval   = _cents_description(cents_off)
                 analysis['issues'].append({
-                    'type': 'pitch_accuracy',
-                    'severity': 'high' if cents_off > 100 else 'medium',
-                    'description': f"Pitch is {cents_off:.0f} cents {direction}",
-                    'reference_pitch': f"{np.mean(ref_cents):.0f} cents",
-                    'user_pitch': f"{np.mean(user_cents):.0f} cents"
+                    'type':      'pitch_accuracy',
+                    'severity':  'high' if cents_off > 100 else 'medium',
+                    # Human-readable description using BOTH note names
+                    'description': (
+                        f"You sang ~{user_note} ({user_hz_avg:.0f} Hz), "
+                        f"reference is ~{ref_note} ({ref_hz_avg:.0f} Hz) — "
+                        f"{interval}, {direction}"
+                    ),
+                    # Raw fields for downstream use
+                    'user_note':  user_note,
+                    'ref_note':   ref_note,
+                    'user_hz':    user_hz_avg,
+                    'ref_hz':     ref_hz_avg,
+                    'cents_off':  cents_off,
+                    'direction':  direction,
                 })
                 analysis['specific_recommendations'].append(
-                    f"The word '{word_timestamp['word']}' should be sung {cents_off:.0f} cents {'lower' if direction == 'sharp' else 'higher'}. "
-                    f"Try imagining the pitch {'dropping' if direction == 'sharp' else 'lifting'} slightly on this word."
+                    f"On \"{word_timestamp['word']}\" aim for ~{ref_note} — "
+                    f"you're landing around {user_note}, which is {interval} {direction}. "
+                    f"Try {'dropping' if direction == 'sharp' else 'lifting'} the pitch slightly and listen for it to lock in."
                 )
             else:
-                analysis['strengths'].append(f"Excellent pitch accuracy on '{word_timestamp['word']}'")
-            
+                analysis['strengths'].append(
+                    f"Nice pitch on \"{word_timestamp['word']}\" — you landed right around {ref_note}, exactly where it should be."
+                )
+
             # Pitch stability comparison
             if pitch_stability > ref_stability * 1.5:
                 analysis['issues'].append({
-                    'type': 'pitch_stability',
+                    'type':     'pitch_stability',
                     'severity': 'medium',
-                    'description': f"Pitch wavers too much (std: {pitch_stability:.1f} vs reference: {ref_stability:.1f})",
+                    'description': (
+                        f"Pitch wavers around {user_note} — "
+                        f"the reference holds steadier at {ref_note}"
+                    ),
                     'user_stability': pitch_stability,
-                    'ref_stability': ref_stability
+                    'ref_stability':  ref_stability,
                 })
                 analysis['specific_recommendations'].append(
-                    f"On '{word_timestamp['word']}', focus on steady breath support to reduce pitch wavering. "
-                    f"The original has more stable pitch here."
+                    f"On \"{word_timestamp['word']}\", your pitch is wandering — "
+                    f"the original holds a steady {ref_note} here. "
+                    f"Engage your core and keep a steady airstream to lock the note in place."
                 )
         
         # Energy/dynamics analysis
@@ -568,28 +617,36 @@ class ComprehensiveVocalAnalyzer:
                 'feedback': []
             }
             
-            # Add issues
+            # Add issues — pitch issues carry both user and reference note names
             for issue in analysis['issues']:
                 feedback_text = ""
                 if issue['type'] == 'pitch_accuracy':
-                    feedback_text = f"🎵 Pitch issue: {issue['description']}"
+                    # Use the rich description that already contains both note names
+                    feedback_text = f"Pitch: {issue['description']}"
                     if issue['severity'] == 'high':
                         high_priority_issues.append(f"{analysis['word']} at {analysis['timestamp']}")
                     else:
                         medium_priority_issues.append(f"{analysis['word']} at {analysis['timestamp']}")
-                
+
+                elif issue['type'] == 'pitch_stability':
+                    feedback_text = f"Stability: {issue['description']}"
+                    medium_priority_issues.append(f"{analysis['word']} at {analysis['timestamp']}")
+
                 elif issue['type'] == 'energy_low':
-                    feedback_text = f"⚡ Energy: {issue['description']}"
+                    feedback_text = f"Energy: {issue['description']}"
                     medium_priority_issues.append(f"{analysis['word']} at {analysis['timestamp']}")
-                
+
+                elif issue['type'] == 'energy_high':
+                    feedback_text = f"Energy: {issue['description']}"
+
                 elif issue['type'] == 'timbre_mismatch':
-                    feedback_text = f"🎨 Tone: {issue['description']}"
+                    feedback_text = f"Tone: {issue['description']}"
                     medium_priority_issues.append(f"{analysis['word']} at {analysis['timestamp']}")
-                
+
                 elif issue['type'] == 'vowel_clarity':
-                    feedback_text = f"🗣️ Vowel: {issue['description']}"
+                    feedback_text = f"Vowel: {issue['description']}"
                     medium_priority_issues.append(f"{analysis['word']} at {analysis['timestamp']}")
-                
+
                 if feedback_text:
                     word_feedback['feedback'].append(feedback_text)
             
@@ -673,9 +730,15 @@ def analyze_audio_match_enhanced(user_audio_path, reference_audio_path, match, r
     # Optional: Perform granular word-level analysis if lyrics are available
     granular_feedback = None
     if match.get("song_words_snippet"):
+        # song_words_snippet is a space-joined string — split it into a word list
+        words = (
+            match["song_words_snippet"].split()
+            if isinstance(match["song_words_snippet"], str)
+            else match["song_words_snippet"]
+        )
         # Align words to timestamps
         word_timestamps = analyzer.align_words_to_timestamps(
-            match["song_words_snippet"], 
+            words,
             0,  # Start from beginning of user audio segment
             len(y_user) / sr  # Duration of user audio
         )
