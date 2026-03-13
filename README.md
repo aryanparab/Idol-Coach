@@ -4,7 +4,9 @@ An AI-powered singing assistant that helps users improve their vocals using inte
 
 ---
 
-## 🌐 Live Preview (Local Development)
+## 🌐 Live Preview (AWS Development)
+https://idol-coach-git-main-aryanparabs-projects.vercel.app/
+
 https://drive.google.com/file/d/1lrmUADXCLoX4zMPax3VONWv4kNPECEs1/view?usp=sharing
 **Run the following in separate terminals:**
 
